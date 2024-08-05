@@ -1,45 +1,60 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 
-import { dir } from "i18next";
-
-// import Footer from '#views/footer'
 
 import { BRAND_NAME } from "#/constants/name";
 
 import AppProvider from "#/providers/index";
 
-import Header from "#/views/header";
 import Maintenance from "#/views/maintenance";
 
-import { initTranslations } from "#/app/i18n";
 
 import jsonLd from "#/utils/metadata";
 
-import { generalSans } from "#/styles/fonts";
+import { raleway } from "#/styles/fonts";
 import "#/styles/globals.css";
 
-import i18nConfig from "#/i18n.config";
+export async function generateMetadata(): Promise<Metadata> {
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const { t } = await initTranslations(locale);
-  const description = t("Meta.home.description", { brand: BRAND_NAME });
-
-  return {
-    title: {
-      default: BRAND_NAME,
-      template: `${BRAND_NAME} | %s`,
-    },
-    description,
-    keywords: t("Meta.keywords"),
-  };
+	return {
+		title: {
+			default: BRAND_NAME,
+			template: `${BRAND_NAME} | %s`,
+		},
+		description: "Kronon Labs leverages cutting-edge technology and advanced data analytics to transform the financial markets.",
+    keywords: ["Legal", "Finance", "Quant"],
+		metadataBase: new URL(`${process.env.NEXT_PUBLIC_CENTRAL_URL}`),
+	// 	openGraph: {
+	// 		title,
+	// 		description,
+	// 		url: `/`,
+	// 		siteName: BRAND_NAME,
+	// 		images: [
+	// 			{
+	// 				url: `/og/small.png`,
+	// 				width: 600,
+	// 				height: 315,
+	// 			},
+	// 			{
+	// 				url: `/og/large.png`,
+	// 				width: 1200,
+	// 				height: 600,
+	// 			},
+	// 		],
+	// 		type: 'website',
+	// 	},
+	// 	twitter: {
+	// 		card: 'summary_large_image',
+	// 		title,
+	// 		description,
+	// 		site: BRAND_NAME,
+	// 		images: [`/og/twitter.png`],
+	// 	},
+	}
 }
+
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -49,36 +64,22 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
-export function generateStaticParams() {
-  return i18nConfig.locales.map((locale) => ({ locale }));
-}
+const RootLayout = ({ children }: React.PropsWithChildren) => (
+	<html lang="en" className={`${raleway.className} dark`}>
+		<body>
+			{process.env.NEXT_PUBLIC_MAINTENANCE === 'true' ? (
+				<Maintenance />
+			) : (
+				<AppProvider>{children}</AppProvider>
+			)}
+		</body>
+		<Script
+			id="script"
+			type="application/ld+json"
+			dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+		/>
+	</html>
+)
 
-const LocaleLayout = ({
-  children,
-  params: { locale },
-}: PropsWithChildren<{ params: { locale: string } }>) => (
-  <html
-    lang={locale}
-    dir={dir(locale)}
-    className={`${generalSans.variable} dark`}
-  >
-    <body>
-      {process.env.NEXT_PUBLIC_MAINTENANCE === "true" ? (
-        <Maintenance />
-      ) : (
-        <AppProvider locale={locale}>
-          <Header />
-          <div className="pt-header">{children}</div>
-          {/* <Footer /> */}
-        </AppProvider>
-      )}
-    </body>
-    <Script
-      id="script"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  </html>
-);
+export default RootLayout
 
-export default LocaleLayout;

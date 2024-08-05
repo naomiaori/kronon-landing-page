@@ -1,2 +1,2 @@
-export const BRAND_NAME = "Polygon";
-export const ALTERNATE_NAME = ["Polygon", "polygon"];
+export const BRAND_NAME = "Kronon Labs";
+export const ALTERNATE_NAME = ["Kronon Labs", "kronon"];

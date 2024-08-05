@@ -1,14 +1,9 @@
-"use client";
+import { PropsWithChildren } from "react";
 
-import React, { PropsWithChildren } from "react";
-
-import TranslationsProvider from "#/src/providers/Translations";
-
-const AppProvider = ({
-  children,
-  locale,
-}: PropsWithChildren<{ locale: string }>) => (
-  <TranslationsProvider locale={locale}>{children}</TranslationsProvider>
+const AppProvider = ({ children }: PropsWithChildren) => (
+  <>
+    {children}
+  </>
 );
 
 export default AppProvider;
