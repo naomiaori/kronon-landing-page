@@ -1,9 +1,19 @@
-import Header from "../views/header";
+import IntroSection from "#/views/intro-section";
+import LogoSection from "#/views/logo-section";
+import ServicesSection from "#/views/services-section";
+import ContactUsSection from "../views/contact-us-section";
+import Footer from "../views/footer";
 
-const HomePage = () => (
-  <main className="relative mx-auto pb-[22.5rem] tablet:pb-[12rem] mobile:pb-[10rem] px-6 mobile:px-4 box-content" >
-    <Header />
-  </main>
-);
 
-export default HomePage;
+export default function Home() {
+  return (
+    <main className="">
+      {/* <LogoSection /> */}
+      {/* <div className="bg-black h-screen"></div> */}
+      <IntroSection />
+      <ServicesSection />
+      <ContactUsSection />
+      <Footer />
+    </main>
+  );
+}

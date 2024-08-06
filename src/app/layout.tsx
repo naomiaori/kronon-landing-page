@@ -8,7 +8,7 @@ import { BRAND_NAME } from "#/constants/name";
 
 import AppProvider from "#/providers/index";
 
-import Maintenance from "#/views/maintenance";
+import Maintenance from "#/src/views/maintenance";
 
 
 import jsonLd from "#/utils/metadata";

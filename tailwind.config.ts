@@ -1,8 +1,6 @@
 /* eslint-disable global-require */
 import { Config } from "tailwindcss";
 
-import { generatePxToRemMapping } from "./src/utils/tailwind";
-
 const tailwindConfig = {
   darkMode: "class",
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
@@ -50,6 +48,9 @@ const tailwindConfig = {
           1200: "rgb(var(--colors-gray-1200) / <alpha-value>)",
         },
       },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(92deg, #fff21 1.07%, #000136 75%)',
+      },
       fontSize: {
         xxxs: ["9px", "150%"],
         xxs: ["11px", "150%"],
@@ -69,10 +70,6 @@ const tailwindConfig = {
         modal: "100",
         select: "90",
       },
-      spacing: {
-        ...generatePxToRemMapping(),
-      },
-
       boxShadow: {
         custom: "0px 0px 8px 5px rgba(0, 0, 0, 0.25)",
       },
