@@ -6,7 +6,6 @@ import { raleway } from "#/styles/fonts";
 
 import routerMap from "#/src/constants/router";
 
-
 const GlobalError = ({ error }: { error: Error & { digest?: string } }) => (
   <html lang="en" className={`${raleway.variable} dark`}>
     <body className="flex min-h-screen flex-col items-center justify-center bg-background px-4">

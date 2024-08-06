@@ -5,12 +5,14 @@ import ArrowLink from "../components/arrow-link";
 const Footer = () => (
   <section className="h-screen px-[6.5rem] py-[5.56rem]">
     <div
-      style={{
-        // backgroundImage: `url('/ui/footer-bg.svg')`,
-        // backgroundSize: "cover",
-        // backgroundPosition: "center",
-        // backgroundRepeat: "no-repeat",
-      }}
+      style={
+        {
+          // backgroundImage: `url('/ui/footer-bg.svg')`,
+          // backgroundSize: "cover",
+          // backgroundPosition: "center",
+          // backgroundRepeat: "no-repeat",
+        }
+      }
       className="p-12 w-full h-full rounded-[2.25rem] leading-normal flex flex-col justify-between"
     >
       <div className="flex justify-between">
@@ -22,14 +24,14 @@ const Footer = () => (
           AND INNOVATION TO TRANSFORM MARKETS.
         </h3>
         <div>
-          <ArrowLink textSize="text-[2.625rem]" iconSize={30} href="">
+          <ArrowLink textSize="text-[2.625rem]" iconSize={30} href="https://www.legalhigh.io/">
             JOIN US
           </ArrowLink>
           <ArrowLink
             textSize="text-[2.625rem]"
             opacity="opacity-70"
             iconSize={30}
-            href=""
+            href="https://www.legalhigh.io/"
           >
             JOIN US
           </ArrowLink>
@@ -37,7 +39,7 @@ const Footer = () => (
             textSize="text-[2.625rem]"
             opacity="opacity-40"
             iconSize={30}
-            href=""
+            href="https://www.legalhigh.io/"
           >
             JOIN US
           </ArrowLink>
@@ -45,7 +47,7 @@ const Footer = () => (
             textSize="text-[2.625rem]"
             opacity="opacity-20"
             iconSize={30}
-            href=""
+            href="https://www.legalhigh.io/"
           >
             JOIN US
           </ArrowLink>
@@ -53,7 +55,7 @@ const Footer = () => (
             textSize="text-[2.625rem]"
             opacity="opacity-10"
             iconSize={30}
-            href=""
+            href="https://www.legalhigh.io/"
           >
             JOIN US
           </ArrowLink>
@@ -61,7 +63,7 @@ const Footer = () => (
             textSize="text-[2.625rem]"
             opacity="opacity-5"
             iconSize={30}
-            href=""
+            href="https://www.legalhigh.io/"
           >
             JOIN US
           </ArrowLink>

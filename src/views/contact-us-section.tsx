@@ -29,7 +29,7 @@ const ContactUsSection = () => (
             <br />
             We always open to everyone.
           </p>
-          <ArrowLink href="">JOIN US</ArrowLink>
+          <ArrowLink href="https://www.legalhigh.io/">JOIN US</ArrowLink>
         </div>
 
         <div className="w-[33rem] flex flex-col justify-between">
@@ -40,7 +40,7 @@ const ContactUsSection = () => (
             Feel free to leave your email at any time. We will respond as soon
             as possible.
           </p>
-          <ArrowLink href="">CONTACT</ArrowLink>
+          <ArrowLink href="https://www.legalhigh.io/">CONTACT</ArrowLink>
         </div>
       </div>
     </ScrollReveal>

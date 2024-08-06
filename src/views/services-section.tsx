@@ -3,12 +3,14 @@ import ScrollReveal from "#/components/ScrollReveal";
 const ServicesSection = () => (
   <section
     className="w-full h-screen text-white pr-[11.25rem]"
-    style={{
-      // backgroundImage: `url('ui/services-bg.svg')`,
-      // backgroundSize: "cover",
-      // backgroundPosition: "center",
-      // backgroundRepeat: "no-repeat",
-    }}
+    style={
+      {
+        // backgroundImage: `url('ui/services-bg.svg')`,
+        // backgroundSize: "cover",
+        // backgroundPosition: "center",
+        // backgroundRepeat: "no-repeat",
+      }
+    }
   >
     <ScrollReveal>
       <div className="flex text-[2rem] justify-between">
