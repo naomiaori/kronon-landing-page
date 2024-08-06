@@ -4,10 +4,10 @@ const ServicesSection = () => (
   <section
     className="w-full h-screen text-white pr-[11.25rem]"
     style={{
-      backgroundImage: `url('ui/services-bg.svg')`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
+      // backgroundImage: `url('ui/services-bg.svg')`,
+      // backgroundSize: "cover",
+      // backgroundPosition: "center",
+      // backgroundRepeat: "no-repeat",
     }}
   >
     <ScrollReveal>
