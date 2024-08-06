@@ -3,58 +3,55 @@ import React from "react";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 
-
 import { BRAND_NAME } from "#/constants/name";
 
 import AppProvider from "#/providers/index";
 
-import Maintenance from "#/src/views/maintenance";
-
-
 import jsonLd from "#/utils/metadata";
 
 import { raleway } from "#/styles/fonts";
+
+import Maintenance from "#/src/views/maintenance";
 import "#/styles/globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
-
-	return {
-		title: {
-			default: BRAND_NAME,
-			template: `${BRAND_NAME} | %s`,
-		},
-		description: "Kronon Labs leverages cutting-edge technology and advanced data analytics to transform the financial markets.",
+  return {
+    title: {
+      default: BRAND_NAME,
+      template: `${BRAND_NAME} | %s`,
+    },
+    description:
+      "Kronon Labs leverages cutting-edge technology and advanced data analytics to transform the financial markets.",
     keywords: ["Legal", "Finance", "Quant"],
-		metadataBase: new URL(`${process.env.NEXT_PUBLIC_CENTRAL_URL}`),
-	// 	openGraph: {
-	// 		title,
-	// 		description,
-	// 		url: `/`,
-	// 		siteName: BRAND_NAME,
-	// 		images: [
-	// 			{
-	// 				url: `/og/small.png`,
-	// 				width: 600,
-	// 				height: 315,
-	// 			},
-	// 			{
-	// 				url: `/og/large.png`,
-	// 				width: 1200,
-	// 				height: 600,
-	// 			},
-	// 		],
-	// 		type: 'website',
-	// 	},
-	// 	twitter: {
-	// 		card: 'summary_large_image',
-	// 		title,
-	// 		description,
-	// 		site: BRAND_NAME,
-	// 		images: [`/og/twitter.png`],
-	// 	},
-	}
+    metadataBase: new URL(`${process.env.NEXT_PUBLIC_CENTRAL_URL}`),
+    // 	openGraph: {
+    // 		title,
+    // 		description,
+    // 		url: `/`,
+    // 		siteName: BRAND_NAME,
+    // 		images: [
+    // 			{
+    // 				url: `/og/small.png`,
+    // 				width: 600,
+    // 				height: 315,
+    // 			},
+    // 			{
+    // 				url: `/og/large.png`,
+    // 				width: 1200,
+    // 				height: 600,
+    // 			},
+    // 		],
+    // 		type: 'website',
+    // 	},
+    // 	twitter: {
+    // 		card: 'summary_large_image',
+    // 		title,
+    // 		description,
+    // 		site: BRAND_NAME,
+    // 		images: [`/og/twitter.png`],
+    // 	},
+  };
 }
-
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -65,21 +62,20 @@ export const viewport: Viewport = {
 };
 
 const RootLayout = ({ children }: React.PropsWithChildren) => (
-	<html lang="en" className={`${raleway.className} dark`}>
-		<body>
-			{process.env.NEXT_PUBLIC_MAINTENANCE === 'true' ? (
-				<Maintenance />
-			) : (
-				<AppProvider>{children}</AppProvider>
-			)}
-		</body>
-		<Script
-			id="script"
-			type="application/ld+json"
-			dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-		/>
-	</html>
-)
+  <html lang="en" className={`${raleway.className} dark`}>
+    <body>
+      {process.env.NEXT_PUBLIC_MAINTENANCE === "true" ? (
+        <Maintenance />
+      ) : (
+        <AppProvider>{children}</AppProvider>
+      )}
+    </body>
+    <Script
+      id="script"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  </html>
+);
 
-export default RootLayout
-
+export default RootLayout;

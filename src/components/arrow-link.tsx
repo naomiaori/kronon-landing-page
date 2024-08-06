@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { PropsWithChildren } from "react";
 
@@ -6,9 +6,9 @@ import { LinkProps } from "next/dist/client/link";
 import Link from "next/link";
 
 import { motion, useAnimation } from "framer-motion";
+import { twMerge } from "tailwind-merge";
 
 import ArrowIcon from "#/public/icon/arrow-right-up.svg";
-import { twMerge } from "tailwind-merge";
 
 type TProps = {
   opacity?: string;
@@ -16,7 +16,13 @@ type TProps = {
   iconSize?: number;
 } & PropsWithChildren<LinkProps>;
 
-const ArrowLink = ({ opacity, textSize="text-base", iconSize=12, href, children }: TProps) => {
+const ArrowLink = ({
+  opacity,
+  textSize = "text-base",
+  iconSize = 12,
+  href,
+  children,
+}: TProps) => {
   const controls1 = useAnimation();
   const controls2 = useAnimation();
 
@@ -50,16 +56,21 @@ const ArrowLink = ({ opacity, textSize="text-base", iconSize=12, href, children 
     });
   };
 
-
   return (
     <Link
       href={href}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={twMerge("cursor-pointer text-white border-b border-b-white w-fit flex items-center gap-4", opacity)}
+      className={twMerge(
+        "cursor-pointer text-white border-b border-b-white w-fit flex items-center gap-4",
+        opacity,
+      )}
     >
       {children && <span className={textSize}>{children}</span>}
-      <div className="relative" style={{ width: `${iconSize}px`, height: `${iconSize}px`}}>
+      <div
+        className="relative"
+        style={{ width: `${iconSize}px`, height: `${iconSize}px` }}
+      >
         <motion.div
           className="absolute"
           initial={{ x: 0, y: 0 }}

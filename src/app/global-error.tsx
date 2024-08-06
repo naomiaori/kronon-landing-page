@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 
-import { generalSans } from "#/styles/fonts";
+import { raleway } from "#/styles/fonts";
 
 import routerMap from "#/src/constants/router";
 
+
 const GlobalError = ({ error }: { error: Error & { digest?: string } }) => (
-  <html lang="en" className={`${generalSans.variable} dark`}>
+  <html lang="en" className={`${raleway.variable} dark`}>
     <body className="flex min-h-screen flex-col items-center justify-center bg-background px-4">
       <div className="flex flex-col items-center">
         <h2 className="primary-clip-text mt-3 text-[3rem] font-bold">

@@ -49,7 +49,7 @@ const tailwindConfig = {
         },
       },
       backgroundImage: {
-        'custom-gradient': 'linear-gradient(92deg, #fff21 1.07%, #000136 75%)',
+        "custom-gradient": "linear-gradient(92deg, #fff21 1.07%, #000136 75%)",
       },
       fontSize: {
         xxxs: ["9px", "150%"],
