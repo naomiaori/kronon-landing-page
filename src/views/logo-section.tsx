@@ -12,7 +12,7 @@ const LogoSection = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [0, 400]);
 
   return (
-    <section className="h-[200rem] flex justify-center z-1">
+    <section className="h-[200rem] flex justify-center z-1 pb-20">
       <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-1">
         <Logo />
       </div>
