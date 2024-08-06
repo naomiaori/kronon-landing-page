@@ -2,15 +2,13 @@ import ScrollReveal from "#/components/ScrollReveal";
 
 const ServicesSection = () => (
   <section
-    className="w-full h-screen text-white pr-[11.25rem]"
-    style={
-      {
-        backgroundImage: `url('ui/services-bg.svg')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }
-    }
+    className="z-50 w-full bg-black h-screen text-white pr-[11.25rem] relative"
+    style={{
+      backgroundImage: `url('ui/services-bg.svg')`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}
   >
     <ScrollReveal>
       <div className="flex text-[2rem] justify-between">

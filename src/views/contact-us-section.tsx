@@ -2,19 +2,9 @@ import ArrowLink from "../components/arrow-link";
 import ScrollReveal from "../components/ScrollReveal";
 
 const ContactUsSection = () => (
-  <section className="h-screen text-white flex items-center justify-center">
+  <section className="z-50 relative bg-black h-screen text-white flex items-center justify-center">
     <ScrollReveal>
-      <h2
-        style={
-          {
-            // background: 'linear-gradient(92deg, #fff21 1.07%, #000136 75%)',
-            // WebkitBackgroundClip: 'text',
-            // // WebkitTextFillColor: 'transparent',
-            // display: 'inline-block',
-          }
-        }
-        className="text-[4rem] font-light w-[47.8rem] mb-40 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
-      >
+      <h2 className="text-[4rem] font-light w-[47.8rem] mb-40 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
         Transform your ambitions into reality with us.
       </h2>
       <div className="flex gap-[8.75rem] h-[14.5rem]">

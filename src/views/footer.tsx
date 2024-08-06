@@ -3,16 +3,14 @@ import Logo from "#/public/logo/logo-footer.svg";
 import ArrowLink from "../components/arrow-link";
 
 const Footer = () => (
-  <section className="h-screen px-[6.5rem] py-[5.56rem]">
+  <section className="z-50 relative bg-black h-screen px-[6.5rem] py-[5.56rem]">
     <div
-      style={
-        {
-          backgroundImage: `url('/ui/footer-bg.svg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }
-      }
+      style={{
+        backgroundImage: `url('/ui/footer-bg.svg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
       className="p-12 w-full h-full rounded-[2.25rem] leading-normal flex flex-col justify-between"
     >
       <div className="flex justify-between">
@@ -24,7 +22,11 @@ const Footer = () => (
           AND INNOVATION TO TRANSFORM MARKETS.
         </h3>
         <div>
-          <ArrowLink textSize="text-[2.625rem]" iconSize={30} href="https://www.legalhigh.io/">
+          <ArrowLink
+            textSize="text-[2.625rem]"
+            iconSize={30}
+            href="https://www.legalhigh.io/"
+          >
             JOIN US
           </ArrowLink>
           <ArrowLink

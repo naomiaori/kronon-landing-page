@@ -31,6 +31,9 @@ const ScrollReveal = ({ children, className }: PropsWithChildren<TProps>) => {
         initial="hidden"
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.25 }}
+        viewport={{
+          amount: "all",
+        }}
       >
         {children}
       </motion.div>
