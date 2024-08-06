@@ -7,10 +7,10 @@ const Footer = () => (
     <div
       style={
         {
-          // backgroundImage: `url('/ui/footer-bg.svg')`,
-          // backgroundSize: "cover",
-          // backgroundPosition: "center",
-          // backgroundRepeat: "no-repeat",
+          backgroundImage: `url('/ui/footer-bg.svg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }
       }
       className="p-12 w-full h-full rounded-[2.25rem] leading-normal flex flex-col justify-between"
