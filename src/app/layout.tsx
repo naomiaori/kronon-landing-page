@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "Kronon Labs leverages cutting-edge technology and advanced data analytics to transform the financial markets.",
     keywords: ["Legal", "Finance", "Quant"],
-    metadataBase: new URL(`${process.env.NEXT_PUBLIC_CENTRAL_URL}`),
+    // metadataBase: new URL(`${process.env.NEXT_PUBLIC_CENTRAL_URL}`),
     // 	openGraph: {
     // 		title,
     // 		description,
